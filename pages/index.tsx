@@ -13,7 +13,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        
+        Hello! This is QR Messenger
       </main>
 
       <footer className={styles.footer}>
