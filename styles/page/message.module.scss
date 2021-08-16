@@ -7,13 +7,14 @@
   align-items: center;
   .container {
     .balloon {
-      margin: 10px;
+      margin: 0px;
       position: relative;
-      padding: 60px 15px;
+      padding: 30px 15px;
       background-color: #42acdd;
       color: #fff;
       border-radius: 10px;
       .message {
+        // word-break: keep-all;
         font-size: 3em;
       }
     }

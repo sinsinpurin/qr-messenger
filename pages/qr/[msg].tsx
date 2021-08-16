@@ -10,17 +10,6 @@ const QR = ()=>{
     let url = "https://qr-messenger.vercel.app/message/" + msg
 
     const QRDownload = ()=>{
-        // const canvas = document.getElementById("qr-gen") as HTMLCanvasElement;
-        // const pngUrl = canvas
-        //     .toDataURL("image/png")
-
-        // let downloadLink = document.createElement("a");
-        // downloadLink.href = pngUrl;
-        // downloadLink.download = `QRMessage.png`;
-        // document.body.appendChild(downloadLink);
-        // downloadLink.click();
-        // document.body.removeChild(downloadLink);
-
         var canvas = document.getElementById("qr-gen") as HTMLCanvasElement;
         var type = 'image/png';
         var dataurl = canvas.toDataURL(type);
