@@ -1,0 +1,26 @@
+.qrpage {
+  .container {
+    text-align: center;
+    .showmsg {
+      margin-bottom: 20px;
+    }
+    .qr {
+      margin-top: 0%;
+    }
+    .downloadbutton {
+      margin-top: 5%;
+      padding: 8px 16px;
+      background: #2affbf;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .downloadbutton:hover {
+      opacity: 0.5;
+    }
+    .downloadbutton:focus {
+      outline: none;
+      box-shadow: 0 0 0 4px #cbd6ee;
+    }
+  }
+}
