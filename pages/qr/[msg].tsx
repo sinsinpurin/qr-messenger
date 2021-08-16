@@ -10,17 +10,31 @@ const QR = ()=>{
     let url = "https://qr-messenger.vercel.app/message/" + msg
 
     const QRDownload = ()=>{
-        const canvas = document.getElementById("qr-gen") as HTMLCanvasElement;
-        const pngUrl = canvas
-            .toDataURL("image/png")
-            .replace("image/png", "image/octet-stream");
+        // const canvas = document.getElementById("qr-gen") as HTMLCanvasElement;
+        // const pngUrl = canvas
+        //     .toDataURL("image/png")
 
-        let downloadLink = document.createElement("a");
-        downloadLink.href = pngUrl;
-        downloadLink.download = `QRMessage.png`;
-        document.body.appendChild(downloadLink);
-        downloadLink.click();
-        document.body.removeChild(downloadLink);
+        // let downloadLink = document.createElement("a");
+        // downloadLink.href = pngUrl;
+        // downloadLink.download = `QRMessage.png`;
+        // document.body.appendChild(downloadLink);
+        // downloadLink.click();
+        // document.body.removeChild(downloadLink);
+
+        var canvas = document.getElementById("qr-gen") as HTMLCanvasElement;
+        var type = 'image/png';
+        var dataurl = canvas.toDataURL(type);
+        var bin = atob(dataurl.split(',')[1]);
+        var buffer = new Uint8Array(bin.length);
+        for (var i = 0; i < bin.length; i++) {
+            buffer[i] = bin.charCodeAt(i);
+        }
+        var blob = new Blob([buffer.buffer], {type: type});
+    
+        var link = document.createElement("a");
+        link.href = window.URL.createObjectURL(blob);
+        link.download = `QRMessage.png`;
+        link.click();
     }
 
     return (
